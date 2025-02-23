@@ -26,7 +26,10 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'no-console': ['error'],
-      'no-relative-import-paths/no-relative-import-paths': 'error',
+      'no-relative-import-paths/no-relative-import-paths': [
+        'error',
+        { allowSameFolder: true, rootDir: 'src', prefix: '@' },
+      ],
       'jsx-a11y/alt-text': [
         'warn',
         {
