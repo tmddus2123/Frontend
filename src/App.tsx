@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from 'styled-components';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container>
+      그냥 일반 프리텐다드
+      <Light>얇은 폰트 300</Light>
+      <Medium>산스를 적용해보아요 500</Medium>
+      <Bold>Bold체입니당</Bold>
+    </Container>
+  );
 }
 
-export default App
+export default App;
+
+const Container = styled.div`
+  font-family: 'Pretendard Variable';
+`;
+
+const Light = styled.div`
+  font-family: 'GmarketSansLight';
+`;
+
+const Medium = styled.div`
+  font-family: 'GmarketSansMedium';
+`;
+
+const Bold = styled.div`
+  font-family: 'GmarketSansBold';
+`;
