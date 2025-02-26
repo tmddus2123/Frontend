@@ -1,8 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import '@/index.css';
+import { BrowserRouter, Route, Routes } from 'react-router';
+
 import App from '@/App.tsx';
-import GlobalStyle from './style/GlobalStyle.tsx';
+import GlobalStyle from '@/style/GlobalStyle.tsx';
+import RootLayout from '@/components/layout/rootLayout.tsx';
 
 async function init() {
   if (process.env.NODE_ENV === 'development') {
@@ -15,7 +17,13 @@ await init();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path='/' element={<App />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
