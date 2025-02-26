@@ -57,6 +57,14 @@ const GlobalStyle = createGlobalStyle`
   img {
     border: none;
   }
+
+  #root {
+    max-width: 540px;
+    margin: 0 auto;
+    background: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 export default GlobalStyle;
