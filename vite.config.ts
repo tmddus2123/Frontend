@@ -11,4 +11,9 @@ export default defineConfig({
       { find: '@', replacement: '/src' },
     ],
   },
+  esbuild: {
+    supported: {
+      'top-level-await': true,
+    },
+  },
 });
