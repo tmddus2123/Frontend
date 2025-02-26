@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import MainContainer from '@/components/mainContainer/mainContainer';
 
+// TODO: router state값 없을 경우 로직 추가
 export default function ShopCheck() {
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -27,7 +28,7 @@ export default function ShopCheck() {
         <BackButton onClick={() => navigate(-1)}>
           아니요, 다시 입력할래요
         </BackButton>
-        <Link to='/' className='success'>
+        <Link to='#' className='success'>
           리뷰 답변 자동 생성 시작하기
         </Link>
       </LinkContainer>

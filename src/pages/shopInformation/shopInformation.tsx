@@ -6,6 +6,8 @@ import MainContainer from '@/components/mainContainer/mainContainer';
 import CloseIcon from '@/assets/images/close.svg?react';
 import { FOOD_TYPE } from '@/types/food';
 
+// TODO: 버튼 disabled 추가
+// router 로직 확인
 export default function ShopInformation() {
   const [shopName, setShopName] = useState('');
   const [selectedFoodType, setSelectedFoodType] = useState<{
