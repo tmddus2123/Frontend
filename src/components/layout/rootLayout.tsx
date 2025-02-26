@@ -11,5 +11,4 @@ export default function RootLayout() {
 
 const Main = styled.main`
   height: 100%;
-  padding: 30px 20px;
 `;
