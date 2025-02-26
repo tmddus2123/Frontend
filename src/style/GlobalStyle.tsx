@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
   #root {
     max-width: 540px;
     margin: 0 auto;
-    background: #f5f5f5;
+    background: ${({ theme }) => theme.colors['gray-100']};
     width: 100%;
     height: 100vh;
   }
