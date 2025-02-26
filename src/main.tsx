@@ -2,10 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
-import App from '@/App.tsx';
 import GlobalStyle from '@/style/GlobalStyle.tsx';
 import RootLayout from '@/components/layout/rootLayout.tsx';
 import { ThemeProvider } from 'styled-components';
+import Home from '@/pages/home/home.tsx';
 
 async function init() {
   if (process.env.NODE_ENV === 'development') {
@@ -68,7 +68,7 @@ createRoot(document.getElementById('root')!).render(
         <GlobalStyle />
         <Routes>
           <Route element={<RootLayout />}>
-            <Route path='/' element={<App />} />
+            <Route path='/' element={<Home />} />
           </Route>
         </Routes>
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function App() {
+export default function Home() {
   return (
     <Container>
       그냥 일반 프리텐다드
@@ -10,8 +10,6 @@ function App() {
     </Container>
   );
 }
-
-export default App;
 
 const Container = styled.div`
   font-family: 'Pretendard Variable';
