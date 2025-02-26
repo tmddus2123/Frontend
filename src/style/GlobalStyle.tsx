@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
@@ -51,7 +52,6 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     padding: 0;
     cursor: pointer;
-    
   }
 
   img {
