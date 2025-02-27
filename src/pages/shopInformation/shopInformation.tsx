@@ -177,7 +177,6 @@ const FoodTypeContainer = styled.div`
 const Button = styled.button`
   background: ${({ theme }) => theme.colors['primary-500']};
   color: ${({ theme }) => theme.colors['white']};
-  font-size: 13px;
   font-weight: 600;
   padding: 14px 0;
   border-radius: 12px;

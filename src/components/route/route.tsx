@@ -4,6 +4,7 @@ import Home from '@/pages/home/home';
 import Login from '@/pages/login/login';
 import ShopInformation from '@/pages/shopInformation/shopInformation';
 import ShopCheck from '@/pages/shopCheck/shopCheck';
+import UploadReview from '@/pages/upload-review/uploadReview';
 
 export default function CustomRoute() {
   return (
@@ -13,6 +14,7 @@ export default function CustomRoute() {
         <Route path='/login' element={<Login />} />
         <Route path='/shop-information' element={<ShopInformation />} />
         <Route path='/shop-check' element={<ShopCheck />} />
+        <Route path='/upload-review' element={<UploadReview />} />
       </Route>
     </Routes>
   );
