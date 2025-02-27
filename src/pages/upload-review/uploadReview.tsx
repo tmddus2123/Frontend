@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Button from '@/components/button/Button';
 import CloseIcon from '@/assets/images/close.svg?react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import Loading from '@/components/loading/Loading';
 
 // TODO: API 연결, 이미지 3개이상 첨부 문구 및 toast
@@ -16,12 +16,14 @@ export default function UploadReview() {
   const [activatedTextareaValue, setActivatedTextareaValue] = useState('');
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const navigate = useNavigate();
 
   const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      navigate('/');
     }, 2000);
   };
 
@@ -133,7 +135,7 @@ export default function UploadReview() {
       </div>
 
       <ButtonContainer>
-        <Link to='/'>답변 업로드 건너뛰기</Link>
+        <Link to='/persona'>답변 업로드 건너뛰기</Link>
         <Button
           type='submit'
           disabled={!fileList.length && !activatedTextareaValue}
