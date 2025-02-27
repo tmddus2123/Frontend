@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router';
+import { useNavigate } from 'react-router';
 
-import MainContainer from '@/components/mainContainer/mainContainer';
 import CloseIcon from '@/assets/images/close.svg?react';
 import { FOOD_TYPE } from '@/types/food';
 
-// TODO: 버튼 disabled 추가
-// router 로직 확인
 export default function ShopInformation() {
   const [shopName, setShopName] = useState('');
   const [selectedFoodType, setSelectedFoodType] = useState<{
@@ -15,9 +12,17 @@ export default function ShopInformation() {
     image: string;
     selectedImage: string;
   }>();
+  const navigate = useNavigate();
+
+  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate('/shop-check', {
+      state: { selectedFoodType, shopName },
+    });
+  };
 
   return (
-    <Container>
+    <Form onSubmit={onSubmitForm}>
       <ContentContainer>
         <Greeting>
           <p>사장님, 안녕하세요!</p>
@@ -67,18 +72,19 @@ export default function ShopInformation() {
         </FoodTypeContainer>
       </ContentContainer>
 
-      <Link to='/shop-check' state={{ selectedFoodType, shopName }}>
+      <Button type='submit' disabled={!shopName || !selectedFoodType}>
         확인
-      </Link>
-    </Container>
+      </Button>
+    </Form>
   );
 }
 
-const Container = styled(MainContainer)`
+const Form = styled.form`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: space-between;
+  padding: 70px 35px 48px 35px;
 `;
 
 const Greeting = styled.section`
@@ -167,13 +173,18 @@ const FoodTypeContainer = styled.div`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Button = styled.button`
   background: ${({ theme }) => theme.colors['primary-500']};
   color: ${({ theme }) => theme.colors['white']};
   font-size: 13px;
   font-weight: 600;
-  padding: 12px 0;
+  padding: 14px 0;
   border-radius: 12px;
   margin-top: 40px;
   text-align: center;
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors['gray-200']};
+    color: ${({ theme }) => theme.colors['gray-500']};
+  }
 `;

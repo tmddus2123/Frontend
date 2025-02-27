@@ -1,14 +1,20 @@
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 import MainContainer from '@/components/mainContainer/mainContainer';
 
-// TODO: router state값 없을 경우 로직 추가
 export default function ShopCheck() {
   const navigate = useNavigate();
   const { state } = useLocation();
   const shopName = state?.shopName;
   const selectedFoodType = state?.selectedFoodType;
+
+  useEffect(() => {
+    if (!shopName || !selectedFoodType) {
+      navigate('/shop-information');
+    }
+  }, []);
 
   return (
     <Container>
