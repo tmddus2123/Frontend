@@ -92,6 +92,7 @@ const Greeting = styled.section`
   font-size: 18px;
   color: ${({ theme }) => theme.colors['gray-800']};
   strong {
+    font-family: 'GmarketSansBold';
     color: ${({ theme }) => theme.colors['primary-500']};
     font-weight: 700;
   }

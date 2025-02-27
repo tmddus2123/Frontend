@@ -20,10 +20,10 @@ export default function ShopCheck() {
     <Container>
       <Title>
         <p>
-          <strong>{shopName || ''}</strong>를 판매하는
+          <strong>{selectedFoodType?.name || ''}</strong>를 판매하는
         </p>
         <p>
-          <strong>{selectedFoodType?.name || ''}</strong> 사장님이시군요!
+          <strong>{shopName || ''}</strong> 사장님이시군요!
         </p>
         <p>이렇게 정보 설정을 완료할까요?</p>
       </Title>
@@ -46,12 +46,12 @@ const Container = styled(MainContainer)`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: space-between;
 `;
 
 const Title = styled.section`
   font-family: 'GmarketSansMedium';
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 40px;
   strong {
     color: ${({ theme }) => theme.colors['primary-500']};
     font-family: 'GmarketSansBold';
@@ -76,6 +76,7 @@ const LinkContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: auto;
 `;
 
 const BackButton = styled.button`
