@@ -1,13 +1,26 @@
 import LoadingChat from '@/assets/images/loading.svg?react';
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface LoadingProps {
   first: string;
   second: string;
-  detail: string;
+  details: string[];
 }
 
-const Loading = ({ first, second, detail }: LoadingProps) => {
+const Loading = ({ first, second, details }: LoadingProps) => {
+  const [currentDetail, setCurrentDetail] = useState(details[0]);
+  const [index, setIndex] = useState(1);
+
+  setInterval(() => {
+    if (index >= details.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+    setCurrentDetail(details[index]);
+  }, 3000);
+
   return (
     <Container>
       <LoadingWrapper>
@@ -20,7 +33,7 @@ const Loading = ({ first, second, detail }: LoadingProps) => {
           <br />
           {second}
         </Title>
-        <Detail>{detail}</Detail>
+        <Detail>{currentDetail}</Detail>
       </LabelWrapper>
     </Container>
   );
