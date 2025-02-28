@@ -48,9 +48,9 @@ export default function UploadReview() {
 
   return isLoading ? (
     <Loading
-      first='답변 업로드 중'
-      second='잠시만 기다려주세요.'
-      detail='답변 업로드 중'
+      first='사장님의 답변 스타일을'
+      second='분석하고 있어요'
+      details={['리대리가 사장님의 답변을 수신했어요...']}
     />
   ) : (
     <Container onSubmit={onSubmitForm}>

@@ -88,7 +88,7 @@ export default function Persona() {
     <Loading
       first='사장님의 답변 스타일을'
       second='분석하고 있어요'
-      detail='리대리가 사장님의 답변을 수신했어요...'
+      details={['리대리가 사장님의 답변을 수신했어요...']}
     />
   );
 }
